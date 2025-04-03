@@ -1,34 +1,49 @@
 package exercicio1;
 
 public class Livro extends ItemBiblioteca {
-        private String autor;
-        private int numeroPaginas;
-        private String isbn;
-
-        public Livro(String titulo, int anoPublicacao, String autor, int numeroPaginas, String isbn) {
-            super(titulo, anoPublicacao);
-            this.autor = autor;
-            this.numeroPaginas = numeroPaginas;
-            this.isbn = isbn;
-        }
-
-        // Getters
-        public String getAutor() {
-            return autor;
-        }
-
-        public int getNumeroPaginas() {
-            return numeroPaginas;
-        }
-
-        public String getIsbn() {
-            return isbn;
-        }
-
-
-        public String detalhes() {
-            return String.format("Livro: %s\nAutor: %s\nAno: %d\nPáginas: %d\nISBN: %s\nDisponível: %s",
-                    getTitulo(), autor, getAnoPublicacao(), numeroPaginas, isbn,
-                    isDisponivel() ? "Sim" : "Não");
-        }
-    }
+	
+	private String autor;
+	private String isbn;
+	private Integer numeroPaginas;
+	
+	// Método construtor da classe Livro
+	public Livro(String autor, String isbn) {
+		this.autor = autor;
+		this.isbn = isbn;
+	}
+	
+	public Livro() {
+		
+	}
+	
+	public String detalhes() {
+		return "Autor: " + autor + 
+				"\nISBN: " + isbn +
+				"\nNumero de paginas: " + numeroPaginas;
+	}
+	
+	// Implementação de Getter e Setters
+	public String getAutor() {
+		return autor;
+	}
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+	public String getIsbn() {
+		return isbn;
+	}
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+	public Integer getNumeroPaginas() {
+		return numeroPaginas;
+	}
+	public void setNumeroPaginas(Integer numeroPaginas) {
+		this.numeroPaginas = numeroPaginas;
+	}
+	
+	
+	
+	
+	
+}

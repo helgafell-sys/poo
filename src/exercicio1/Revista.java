@@ -1,34 +1,45 @@
 package exercicio1;
 
+import exercicio1.ItemBiblioteca;
+
 public class Revista extends ItemBiblioteca {
-    private int numero;
-    private String periodicidade;
-    private String editora;
-
-    public Revista(String titulo, int anoPublicacao, int numero, String periodicidade, String editora) {
-        super(titulo, anoPublicacao);
-        this.numero = numero;
-        this.periodicidade = periodicidade;
-        this.editora = editora;
-    }
-
-    // Getters
-    public int getNumero() {
-        return numero;
-    }
-
-    public String getPeriodicidade() {
-        return periodicidade;
-    }
-
-    public String getEditora() {
-        return editora;
-    }
-
-
-    public String detalhes() {
-        return String.format("Revista: %s\nNúmero: %d\nPeriodicidade: %s\nEditora: %s\nAno: %d\nDisponível: %s",
-                getTitulo(), numero, periodicidade, editora, getAnoPublicacao(),
-                isDisponivel() ? "Sim" : "Não");
-    }
+	private String periodicidade;
+	private String editora;
+	private int numero;
+	
+	// Método construtor da classe Revista
+	public Revista(String periodicidade, String editora) {
+		this.periodicidade = periodicidade;
+		this.editora = editora;
+	}
+	
+	
+	public String detalhes() {
+		return "Periodicidade: " + periodicidade + 
+				"\nEditora: " + editora +
+				"\nNumero: " + numero;
+	}
+	
+	public String getPeriodicidade() {
+		return periodicidade;
+	}
+	public void setPeriodicidade(String periodicidade) {
+		this.periodicidade = periodicidade;
+	}
+	public String getEditora() {
+		return editora;
+	}
+	public void setEditora(String editora) {
+		this.editora = editora;
+	}
+	public int getNumero() {
+		return numero;
+	}
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+	
+	
+	
+	
 }

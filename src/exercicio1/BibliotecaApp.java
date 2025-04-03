@@ -1,51 +1,42 @@
 package exercicio1;
 
+import javax.swing.JOptionPane;
+
 public class BibliotecaApp {
 	
+	public static void main(String[] args) {
+		
+	String autor
+		= JOptionPane.showInputDialog("Infome o nome do autor: ");
+	String isbn
+		= JOptionPane.showInputDialog("Infome o ISBN: ");
 	
-    public static void main(String[] args) {
-        // Criando alguns itens
-        Livro livro1 = new Livro("Dom Casmurro", 1899, "Machado de Assis", 256, "978-85-7232-000-0");
-        Revista revista1 = new Revista("Veja", 2023, 2835, "Semanal", "Abril");
+		
+	Livro l1 = new Livro(autor, isbn);
+	l1.setTitulo("Joaozinho Gabriel");
+	l1.setAno(1999);
+	l1.setNumeroPaginas(50);
+	System.out.println(l1.detalhes());
+	System.out.println(l1.detalhes1());
+	
+	Revista r1 = new Revista("Mensal", "Maio");
+	r1.setTitulo("Poggers");
+	r1.setNumero(12);
+	r1.setAno(1900);
+	System.out.println(r1.detalhes());
+	System.out.println(r1.detalhes1());
 
-        // Criando usuário
-        Usuario usuario1 = new Usuario("João Silva", 1);
-
-        // Emprestando itens
-        System.out.println("Tentando emprestar itens...");
-        if (usuario1.emprestarItem(livro1)) {
-            System.out.println("Livro emprestado com sucesso!");
-        } else {
-            System.out.println("Não foi possível emprestar o livro.");
-        }
-
-        if (usuario1.emprestarItem(revista1)) {
-            System.out.println("Revista emprestada com sucesso!");
-        } else {
-            System.out.println("Não foi possível emprestar a revista.");
-        }
-
-        // Tentando emprestar o mesmo livro novamente
-        if (usuario1.emprestarItem(livro1)) {
-            System.out.println("Livro emprestado com sucesso!");
-        } else {
-            System.out.println("Não foi possível emprestar o livro (já está emprestado).");
-        }
-
-        // Listando itens emprestados
-        System.out.println("\nItens emprestados:");
-        usuario1.listarItensEmprestados();
-
-        // Devolvendo um item
-        System.out.println("\nDevolvendo o livro...");
-        if (usuario1.devolverItem(livro1)) {
-            System.out.println("Livro devolvido com sucesso!");
-        } else {
-            System.out.println("Não foi possível devolver o livro.");
-        }
-
-        // Listando itens emprestados após devolução
-        System.out.println("\nItens emprestados após devolução:");
-        usuario1.listarItensEmprestados();
-    }
+	
+	Usuario u1 = new Usuario();
+	u1.setNome("Joaozinho Gabrielzinho");
+	u1.setId_usuario(1);
+	
+	u1.emprestarItem(r1);
+	
+	u1.emprestarItem(l1);
+	
+	
+	}
+	
+	
 }

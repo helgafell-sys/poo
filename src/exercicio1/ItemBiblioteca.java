@@ -1,53 +1,57 @@
 package exercicio1;
 
-// Classe base abstrata para itens da biblioteca
-public abstract class ItemBiblioteca {
-    private String titulo;
-    private int anoPublicacao;
-    private boolean disponivel;
+public class ItemBiblioteca {
+	
+	private String titulo;
+	private int ano;
+	private boolean disponivel;
+	
+	
+	public String detalhes1() {
+		return "Titulo: " + titulo + 
+				"\nAno: " + ano +
+				"\nDisponivel: " + disponivel;
+	}
+		
+	public void emprestar() {
+		
+	}
+	
+	public void devolver() {
+		
+	}
+	
+	
+	public String detalhes() {
+		return "";
+	}
 
-    public ItemBiblioteca(String titulo, int anoPublicacao) {
-        this.titulo = titulo;
-        this.anoPublicacao = anoPublicacao;
-        this.disponivel = true;
-    }
+	public String getTitulo() {
+		return titulo;
+	}
 
-    // Métodos getters e setters
- // Métodos getters e setters
-    public String getTitulo() {
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
 
-        return titulo;
-    }
+	public int getAno() {
+		return ano;
+	}
 
-    public int getAnoPublicacao() {
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
 
-        return anoPublicacao;
-    }
+	public boolean isDisponivel() {
+		return disponivel;
+	}
 
-    public boolean isDisponivel() {
-
-        return disponivel;
-    }
-
-    protected void setDisponivel(boolean disponivel) {
-
-        this.disponivel = disponivel;
-    }
-
-
-    // Métodos para empréstimo e devolução
-    public boolean emprestar() {
-        if (disponivel) {
-            disponivel = false;
-            return true;
-        }
-        return false;
-    }
-
-    public void devolver() {
-        disponivel = true;
-    }
-
-    // Metodo abstrato para detalhes do item
-    public abstract String detalhes();
+	public void setDisponivel(boolean disponivel) {
+		this.disponivel = disponivel;
+	}
+	
+	
+	
+	
+	
 }
